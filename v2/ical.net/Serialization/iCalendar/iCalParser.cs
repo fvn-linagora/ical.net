@@ -80,7 +80,7 @@ namespace ical.net.Serialization.iCalendar
             initialize();
         }
 
-        public CalendarCollection icalendar(ISerializationContext ctx) //throws RecognitionException, TokenStreamException
+        public CalendarCollection icalendar(SerializationContext ctx) //throws RecognitionException, TokenStreamException
         {
             var calendars = new CalendarCollection();
 
@@ -187,7 +187,7 @@ namespace ical.net.Serialization.iCalendar
             return calendars;
         }
 
-        public void icalbody(ISerializationContext ctx, ICalendar cal) //throws RecognitionException, TokenStreamException
+        public void icalbody(SerializationContext ctx, ICalendar cal) //throws RecognitionException, TokenStreamException
         {
             var sf = ctx.GetService(typeof(ISerializerFactory)) as ISerializerFactory;
             var cf = ctx.GetService(typeof(ICalendarComponentFactory)) as ICalendarComponentFactory;
@@ -217,7 +217,7 @@ namespace ical.net.Serialization.iCalendar
             ;
         }
 
-        public ICalendarProperty property(ISerializationContext ctx, ICalendarComponent c)
+        public ICalendarProperty property(SerializationContext ctx, ICalendarComponent c)
         {
             ICalendarProperty p;
             {
@@ -340,7 +340,7 @@ namespace ical.net.Serialization.iCalendar
             return p;
         }
 
-        public ICalendarComponent component(ISerializationContext ctx, ISerializerFactory sf, ICalendarComponentFactory cf, ICalendarObject o)
+        public ICalendarComponent component(SerializationContext ctx, ISerializerFactory sf, ICalendarComponentFactory cf, ICalendarObject o)
             //throws RecognitionException, TokenStreamException
         {
             ICalendarComponent c;
@@ -462,7 +462,7 @@ namespace ical.net.Serialization.iCalendar
             return c;
         }
 
-        public CalendarParameter parameter(ISerializationContext ctx, ICalendarParameterCollectionContainer container)
+        public CalendarParameter parameter(SerializationContext ctx, ICalendarParameterCollectionContainer container)
         {
             CalendarParameter p;
             var values = new List<string>(128);
