@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using ical.net.General;
-using ical.net.Interfaces;
 using ical.net.Interfaces.Components;
 using ical.net.Interfaces.DataTypes;
 using ical.net.Interfaces.General;
@@ -37,7 +36,7 @@ namespace ical.net.Serialization.iCalendar.Factory
             {
                 ISerializer s;
 
-                if (typeof (ICalendar).IsAssignableFrom(objectType))
+                if (typeof (Calendar).IsAssignableFrom(objectType))
                 {
                     s = new CalendarSerializer();
                 }
